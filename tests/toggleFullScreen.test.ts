@@ -12,7 +12,7 @@ test('Toggle full screen mode', () => {
     msFullscreenElement: null,
   };
 
-  global.document = mockDocument as Document;
+  global.document = mockDocument as unknown as Document;
 
   toggleFullScreen();
   expect(mockDocument.documentElement.requestFullscreen).toHaveBeenCalled();

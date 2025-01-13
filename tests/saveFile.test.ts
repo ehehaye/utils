@@ -26,8 +26,8 @@ test.skip('Save content to a file', () => {
   // Mock the global `window` and `document` objects
   const originalWindow = global.window;
   const originalDocument = global.document;
-  global.window = mockWindow as Window;
-  global.document = mockDocument as Document;
+  Object.assign(global.window, mockWindow);
+  global.document = mockDocument as unknown as Document;
 
   saveFile(content, fileName);
 
