@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => {
         reportsDirectory: './tests/coverage',
         reporters: ['default', 'html'],
       },
+      sequence: {
+        hooks: 'parallel',
+      },
       // browser: {
       //   enabled: true,
       //   headless: true,
