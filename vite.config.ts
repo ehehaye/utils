@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => {
         reportsDirectory: './tests/coverage',
         reporters: ['default', 'html'],
       },
+      sequence: {
+        hooks: 'parallel',
+      },
       // browser: {
       //   enabled: true,
       //   headless: true,
@@ -55,13 +58,6 @@ export default defineConfig(({ mode }) => {
             exports: undefined,
             entryFileNames: '[name].mjs',
             preserveModulesRoot: 'src',
-          },
-          {
-            format: 'cjs',
-            dir: 'lib',
-            preserveModules: true,
-            exports: undefined,
-            entryFileNames: '[name].cjs',
           },
           {
             format: 'iife',

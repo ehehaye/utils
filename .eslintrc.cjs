@@ -1,6 +1,7 @@
+const { builtinModules } = require('module');
+
 module.exports = {
   env: {
-    browser: true,
     es2021: true,
     node: true,
   },
@@ -45,6 +46,22 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['./src/**/*.ts'],
+      rules: {
+        'no-restricted-imports': [
+          'error',
+          {
+            paths: builtinModules,
+            patterns: ['node:*'],
+          },
+        ],
+      },
+      env: {
+        browser: true,
+        node: false,
+      },
+    },
+    {
       files: ['./scripts/**/*.ts'],
       rules: {
         'no-console': 'off',
@@ -53,7 +70,7 @@ module.exports = {
     {
       files: ['./tests/**/*.ts'],
       env: {
-        'vitest-globals/env': true,
+        'vitest-globals/env': true
       },
       rules: {
         'max-len': 'off',
