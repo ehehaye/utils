@@ -1,7 +1,7 @@
 {
   "name": "@rthx/utils",
   "version": "0.2.3",
-  "description": "Collection of JS frequently-used snippets",
+  "description": "Collection of JS frequently-used snippets in browser",
   "author": "hongxin.tang@hotmail.com",
   "repository": "https://github.com/tanghongxin/utils.git",
   "license": "MIT",
@@ -11,7 +11,6 @@
   "files": [
     "dist",
     "esm",
-    "lib",
     "LICENSE",
     "index.d.ts",
     "types"
@@ -20,18 +19,13 @@
   "exports": {
     ".": {
       "import": "./esm/index.mjs",
-      "require": "./lib/index.cjs",
       "browser": "./dist/index.js"
     },
-    "./lib/*": {
-      "import": "./lib/*",
-      "require": "./lib/*"
-    },
     "./esm/*": {
-      "import": "./esm/*",
-      "require": "./esm/*"
+      "import": "./esm/*"
     }
   },
+  "type": "module",
   "scripts": {
     "auto-import": "vite-node ./scripts/autoImport.ts",
     "build": "pnpm auto-import && vite build",
@@ -61,6 +55,7 @@
     "inquirer": "^9.2.19",
     "jsdom": "^26.0.0",
     "semver": "^7.6.0",
+    "typescript": "5.4.3",
     "vite": "^6.0.7",
     "vite-node": "^1.5.0",
     "vite-plugin-dts": "^4.5.0",

@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
   },
   extends: [
     'airbnb-base',
@@ -54,6 +53,7 @@ module.exports = {
       files: ['./tests/**/*.ts'],
       env: {
         'vitest-globals/env': true,
+        node: true,
       },
       rules: {
         'max-len': 'off',

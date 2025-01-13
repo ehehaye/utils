@@ -57,13 +57,6 @@ export default defineConfig(({ mode }) => {
             preserveModulesRoot: 'src',
           },
           {
-            format: 'cjs',
-            dir: 'lib',
-            preserveModules: true,
-            exports: undefined,
-            entryFileNames: '[name].cjs',
-          },
-          {
             format: 'iife',
             dir: 'dist',
             name: 'Utils',
