@@ -10,4 +10,4 @@ pnpm add @rthx/utils
 
 ## Doc
 
-see [Type Definitions](https://github.com/tanghongxin/utils/blob/main/index.d.ts)
+see [Type Definitions](https://github.com/ehehaye/utils/blob/main/index.d.ts)
